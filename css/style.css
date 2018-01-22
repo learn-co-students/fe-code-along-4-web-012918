@@ -78,3 +78,17 @@ figcaption {
   margin: 0 auto;
   background-color: #eee;
 }
+
+.col-1 {
+  float: left;
+  width: 31%;
+}
+
+.col-2 {
+  float: left;
+  width: 65%;
+}
+
+.col-3 {
+
+}
