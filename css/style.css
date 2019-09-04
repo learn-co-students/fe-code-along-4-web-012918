@@ -42,7 +42,7 @@ figcaption {
 /* ID selector (apply to one unique element per page) */
 
 #logo { /* select elements with id="logo" */
-  background: aqua;
+
 }
 
 /* Descendent Selector */
@@ -70,3 +70,105 @@ figcaption {
 #details a:active {
   color: red;
 }
+
+/*//// MEDIA ////*/
+
+/*allow fluid sizing, 100% within confines of parent (such as our columns) */
+/*This allows flexibility: since the media inside the columns is set to
+a fluid amount (100%), and the columns themselves are a fluid amount (sized
+in percentages) we have a single location, the wrapper width, where we 
+can adjust & change the width of the site layout.*/
+img, video, audio {
+  max-width: 100%;
+}
+
+/*//// LAYOUT ////*/
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.wrapper {
+  width: 960px;
+  /*width: 1080px;*/
+  margin: 0 auto;
+  /*background: #eee;*/
+}
+
+/*span 1/3*/
+.col-1 {
+  float: left;
+  width: 32%;
+  background: #ccc;
+  /* subtract 2% for each column margin so 0.02*3=0.06 & 1-0.06=0.96
+  and 0.96/3=0.32 -> 32% */
+}
+/*span 2/3*/
+.col-2 {
+  float: left;
+  width: 66%;
+  background: #ccc;
+  /* add back 2% because 1/3+2/3=3/3 and only 2 columns
+  so 4%, not 6% ... 32% * 2 = 64% + 2% */
+}
+/*span 3/3 100%*/
+.col-3 {
+  background: #ccc;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+/*all columns get a left margin of 2%*/
+[class*="col-"] {
+  margin-left: 2%;
+}
+/*left-most column needs no left margin*/
+.first {
+  margin-left: 0%;
+}
+
+/*//// SECTIONS ////*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/*//// SOCIAL ////*/
+
+#social {
+  position: fixed;
+  top: 200px;
+  right: 20px;
+  width: 40px;
+  z-index: 1;
+}
+
+#social a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+}
+
+
+
+
+
